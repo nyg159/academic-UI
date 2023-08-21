@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+        <!-- 여기는 나중에 배울것 CSS-->
+    <style> 
+        .circle{
+            animation: rotate 1s linear infinite;
+        }
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+            
+        }
+
+    </style>
 <body>
     <h1>로고 제작 사이트</h1>
     <hr>
@@ -16,7 +29,7 @@
 
     <p><img src="img/zerg-logo.png" alt="" width="300px"></p>
 
-    <p><img src="img/doge coin-logo.png" alt="" width="300px"></p>
+    <p><img class="circle" src="img/doge coin-logo.png" alt="" width="300px"></p>
     
 
 </body>
