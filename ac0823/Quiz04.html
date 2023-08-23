@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz94.html</title>
+    <style>
+        table{
+            border-collapse: collapse ;
+        }
+        td,th{
+            padding: 5px 10px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>상품 주문서</h1>
+    <hr>
+    <form>
+        <fieldset>
+            <legend>개인정보</legend>
+            <table>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input type="text" name="name" id="username" placeholder="여백없이 작성">
+                    </td>
+
+                    <tr>
+                        <td>연락처</td>
+                        <td>
+                            <input type="text" name="phonenumber" id="phone" placeholder="연락 가능한 번호">
+                        </td>
+
+                    </tr>
+                    
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>배송지 정보</legend>
+            <table>
+                <tr>
+                    <td>주소</td>
+                    <td><input type="text" name="adress" id="useradress"></td>
+                </tr>
+
+                <tr>
+                    <td>전화번호</td>
+                    <td><input type="text" name="homenumber" id="usernumber"></td>
+
+                </tr>
+
+                <tr>
+                    <td>메모</td>
+                    <td>                
+                        <textarea name="memo" id="usermemo" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>주문 정보</legend>
+            <p>
+                <input type="checkbox">과테말라 안티구아(100g)
+                <input type="number" required value="0">개
+
+            </p>
+
+            <p>
+                <input type="checkbox">인도네시아 인얼리(100g)
+                <input type="number" required value="0">개
+
+            </p>
+
+            <p>
+                <input type="checkbox">탐라는로다(블랜딩)(100g)
+                <input type="number" required value="0">개
+
+            </p>
+
+            
+        </fieldset>
+        <br>
+        <button>주문하기</button>
+        <button type="reset">다시 작성</button>
+</form>
+    
+
+
+</body>
+</html>
