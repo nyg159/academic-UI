@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04.html</title>
+
+    <style>
+        * {     /* 전체 선택자 */
+            color: aqua;
+        }
+
+        body{       /* 태그 선택자 */
+            background-color: gray;
+        }
+
+        p{
+            color: yellow;
+        }
+
+        #unique{        /* 아이디 선택자 (아이디 앞에 #을 붙어야 함) 따로따로 선언이 가능 
+                           아이디 선택자 :  지정 아이디 에만 스타일 지정 해준다.*/
+            color: red;
+        }
+
+        .group{         /* 클래스 선택자 : 지정 그룹들에만 스타일 적용*/
+            color: pink;
+            font-size: 30px;
+        }
+
+        /*
+            1. 선택자는 세부적 일수록 우선순위가 높다
+            id > group > tag > all
+
+            2. 우선순위가 같으면 아래 작성된 구문이 적용된다.
+
+        */
+
+        #unique:hover{
+            transition: all 5s;
+            transform: rotate(90deg);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>CSS 선택자 (selector)</h1>
+    <hr>
+
+    <h4>선택자는 말그래도 어떤 태그를 선택할지 고르는 개념</h4>
+
+    <p>Hello java</p>
+    <p class="group">Welcome To Oracle DB</p>
+    <p id="unique" class="group">HTML Is Progam Language</p>
+    <p id="unique">Let Start Css!!!</p> <!-- 이렇게 id를 중복해서 주면 절대 안됨!!! id 찾기가 어려움-->
+    <p class="group"> hello world</p>
+
+
+    
+</body>
+</html>
