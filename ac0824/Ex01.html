@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+
+    <!-- 1. 외부 css 연결 하는 방법 -->
+    <link rel="stylesheet" href="/ac0824css/ex01.css">
+
+    <!-- 2. 내부 css 사용-->
+    <style>
+        h4{
+            color: orange;
+        }
+    </style>
+    <!-- 외부와 내부가 같이 같은 곳을 적용하게 된다면 cascade 에 따라
+        나중에 정의된 부분이 구현 된다.-->
+    <!-- 보통 외부 -> 내부 -> 인라인 순서로 적용이 되서 인라인이 무조건 적용된다.-->
+
+</head>
+<body>
+    <h1>스타일 적용 방식</h1>
+    <hr>
+
+    <ol>
+        <li>외부 스타일</li>
+        <li>내부 스타일</li>
+        <li>인라인 스타일</li>
+
+    </ol>
+
+    <!-- 3. 인라인 css 사용 -->
+    <h4 style="color: blue;">적용 결과 입니다</h4>
+
+    <h4>결과</h4>
+
+    <ul>
+        <li>우선 순위 : 인라인, 내부, 외부</li>
+        <li>재사용성 : 외부 > 내부 > 인라인</li>
+    </ul>
+
+
+</body>
+</html>

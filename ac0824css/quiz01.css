@@ -1,0 +1,21 @@
+h1{
+    color: red;
+    text-shadow: 10px 5px 3px red;
+}
+
+p{
+    font-weight: bold;
+}
+
+ul{
+    font-weight: bold;
+    word-spacing: 10px;
+    text-decoration: underline;
+}
+
+ol{
+    
+    font-size: 20px;
+    text-decoration: underline dashed;
+    
+}
