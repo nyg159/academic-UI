@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+
+    <style>
+        .figure{
+            list-style: square;
+            /* disc (기본), circle, square, none */
+
+        }
+
+        ol{
+            list-style: lower-greek;
+            /* decimal (기본), lower-alpha, lower-roman 등  */
+        }
+
+        .image{
+            list-style: none;
+            list-style: url(/ac0825/img/star.png);
+            /* 원본 이미지 크기를 줄여야 잘나옴 
+                글자 크기 만큼 줄여야 한다 */
+        }
+
+        .menu{
+            list-style: none;
+            padding: 0;
+        }
+        
+
+        
+
+    </style>
+
+</head>
+<body>
+    <h1>u1, ol 스타일</h1>
+    <hr>
+
+    <h4>도형 모양</h4>
+
+    <ul class="figure">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+
+    </ul>
+
+    <h4>숫자 모양</h4>
+
+    <ol>
+        <li>html</li>
+        <li>css</li>
+        <li>js</li>
+
+    </ol>
+
+    <h4>이미지 모양</h4>
+
+    <ul class="image">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+
+    </ul>
+
+    <h4>ul al의 padding</h4>
+
+    <ul class="menu">
+        <li>리스트 태그는 좌측에 padding 이 존재</li>
+        <li>따라서 가로 매뉴를 만들 땐 방해가 될 수 있다</li>
+     
+
+    </ul>
+
+
+
+
+</body>
+</html>
