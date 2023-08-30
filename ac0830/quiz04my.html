@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz04</title>
+</head>
+<body>
+    <h1>Quiz04</h1>
+    <hr>
+
+    
+    <h3>1. 1 ~ n 까지 일렬로 출력</h3>
+    <p1>
+
+    </p1>
+    
+    <h3>2. n ~ 1 까지 일렬로 출력</h3>
+    <p2>
+
+    </p2>
+    
+
+    <h3>3. 1 ~ n 까지 합계 출력</h3>
+    <p3>
+
+    </p3>
+    
+
+    <h3>4. n ~ n 까지 별찍기 출력</h3>
+    
+
+
+    <script>
+        let n1 = prompt("정수를 입력해주세요");
+        let msg = "";
+        let msg1 = "";
+        let msg2 = "";
+        var sum = 0;
+
+        let num = 1;
+        
+        while(num <= n1){
+            msg += ` ${num}`;
+            num++;
+
+        }
+        num = 1;
+        
+        while(num <= n1){
+            msg1 += ` ${n1}`;
+            n1--;
+
+        }
+
+        for(let i = 1; i <= n1; i++){
+            sum = sum + i; 
+            msg2 += `합계 : ${i}`;
+            console.log(1);
+
+        }
+        // msg2 = `합계 : ${sum}`;10
+
+    
+
+        document.getElementsByTagName('p1')[0].innerHTML = msg;
+        document.getElementsByTagName('p2')[0].innerHTML = msg1;
+        document.getElementsByTagName('p3')[0].innerHTML = msg2;
+
+
+
+
+    </script>
+
+
+</body>
+</html>

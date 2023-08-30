@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz03</title>
+
+    <style>
+        main > div{
+            border: 1px solid black;
+            padding: 5px 10px;
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <h1>구구단 표</h1>
+    <hr>
+
+    <main>
+        <div>
+            <h3>2단</h3>
+            <hr>
+            2 X 1 = 2 <br>
+            2 x 2 = 4
+        </div>
+
+    </main>
+
+    <script>
+        let numi = "";
+        let numj ="";
+        let num;
+
+        for(let i = 2; i <= 9; i++){
+            numi += `<h3> ${i} 단</h3>`;
+
+            for(let j = 1; j <= 9; j++){
+                num = i * j;
+                numj += `<tr><td> ${i} x ${j} = ${num} </td><tr>`;
+
+
+            }
+        }
+
+        // document.getElementsByTagName('tr')[0].innerHTML = numi;
+
+        // document.getElementsByTagName('table')[0].innerHTML = numj;
+
+    </script>
+    
+</body>
+</html>
