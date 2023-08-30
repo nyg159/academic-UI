@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+
+    <style>
+        img{
+            width: 300px;
+        }
+        .translate{
+            perspective: 300px;
+            /* 원근감을 설정. 현재 바라보고 있는 위치를 설정 */
+        }
+
+        .translate > img:hover{
+            transform: translate3d(0,0,-150px);
+            /* translate3d(x좌표,y좌표,z좌표) */
+            /* z좌표는 부모태그에 원근감 설정이 되어야 동작한다 */
+            transition: all 1s;
+        }
+
+        .scale{
+            perspective: 300px;
+        }
+        .scale > img:hover{
+            transform: scale3d(2,1,0);
+            /*  x,y,z 인데 z는 뭐 없다*/
+            transition: all 2s;
+        }
+
+        .rotate > img:hover{
+            transform: rotate3d(0, 1, 1, 360deg);
+            /* rotate3d(x , y , z , 각도) */
+            /* 1은 적용, 0 은 적용x */
+            transition: all 2s;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <h1>3D 애니메이션</h1>
+    <hr>
+
+    <div class="translate">
+        <img src="/ac0824/img/banner.png">
+        
+    </div>
+
+    <div class="scale">
+        <img src="/ac0824/img/banner.png">
+        
+    </div>
+
+    <div class="rotate">
+        <img src="/ac0824/img/banner.png">
+        
+    </div>
+
+    
+</body>
+</html>

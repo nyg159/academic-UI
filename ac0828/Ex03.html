@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+
+    <style>
+        .container > div{
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+            background-color: gold;
+
+        }
+
+        input:checked ~ .container > div{
+            width: 100%;
+            border-radius: 30px;
+            background-color: red;
+        }
+
+        .all{
+            transition: all 5s;
+            /* all 을 사용해서 모든 요소가 변경됨 그라데이션 처럼 바뀐다 */
+            /* 모서리도 천천히 둥글어 졌다 */
+        }
+
+        .sub{
+            transition: width 5s;
+            /* width 에만 변화를 주고 나머지는 한번에 다 바뀜 */
+        }
+
+        .deley{
+            transition: all 5s 1s;
+            /* 뒤에 있는 시간은 1초 딜레이를 주는 것 */
+            /* 1초 이후 에니메이션 시작 함 */
+        }
+        .nodeley{
+            transition: all 5s;
+
+        }
+        
+        .linear{
+            transition: all 5s linear;
+            /* 일정한 속도로 올라감 */
+        }
+        .ease{
+            transition: all 5s ease;
+        }
+        .ease-in{
+            transition: all 5s ease-in;
+        }
+        .ease-out{
+            transition: all 5s ease-out;
+        }
+        .ease-in-out{
+            transition: all 5s ease-in-out;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <h1>Transition 속성</h1>
+    <hr>
+
+    <input type="checkbox">start
+
+    <h4>1.property</h4>
+
+    <div class="container">
+        <div class="all">all</div>
+        <div class="sub">sub</div>
+
+    </div>
+
+    <h4>2.deley</h4>
+
+
+    <div class="container">
+        <div class="deley">deley</div>
+        <div class="nodeley">nodeley</div>
+
+    </div>
+
+    <h4>3.timming</h4>
+
+
+    <div class="container">
+        <div class="linear">linear</div>
+        <div class="ease">ease</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+
+
+    </div>
+    
+</body>
+</html>
