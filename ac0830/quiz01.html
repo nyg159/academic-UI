@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+</head>
+<body>
+    <h1>Quiz01</h1>
+    <hr>
+
+    <h4>1. 정수를 입력해서 3과5의 공배수인지 판별</h4>
+
+    <h4>2. 정수를 입력 받아서 절대값을 출력</h4>
+
+    <script>
+        
+        var n = prompt("정수를 입력하세요");
+
+        if((n % 3 == 0) && (n % 5 == 0)){
+            console.log('3과 5의 공배수 입니다.');
+        }else{
+            console.log('3과 5의 공배수가 아닙니다.');
+        }
+
+        if(n >= 0){
+            console.log('입력 받은 수의 절대 값 : '+ n);
+        }else{
+            var n1 = n * -1;
+            console.log('입력 받은 수의 절대 값 : '+ n1);
+
+        }
+    </script>
+    
+</body>
+</html>
