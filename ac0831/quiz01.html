@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <hr>
+
+    <h3>1. 절대 값을 반환 하는 함수</h3>
+    <p></p>
+
+    <h3>2. 1 ~ n 까지의 곱을 반환 하는 함수</h3>
+    <p></p>
+
+    <h3>3. 전달한 숫자를 거꾸로 반환하는 함수</h3>
+    <p></p>
+
+    <script>
+        let n = prompt("1.정수를 입력해주세요");
+        let n2 = prompt("2.정수를 입력해주세요");
+        let n3 = prompt("3.정수를 입력해주세요");
+
+
+        function quiz1(n){
+            let msg = "";
+
+            if(n < 0){
+                let n1 =  n * -1;
+                msg += `${n}의 절대 값 : ${n1}`;
+                
+            }
+            else{
+                msg += `절대 값 : ${n}`;
+
+            }
+            // 매번 doucumernt.~ 쓰려고 하니 너무 길어서 불편하다
+            // java에서 인스턴스를 참조변수에 저장하고 재사용 하듯
+            // js에서 찾은 요소를 변수에 저장 시켜놓고 쓰면 작성도 편해짐
+
+            document.getElementsByTagName('p')[0].innerHTML += msg;
+
+        }
+        quiz1(n);
+
+        function quiz2(n2){
+            let msg = "";
+            let sum = n2;
+
+
+            for(let i = 1; i < n2; i++){
+                sum *= i;
+                
+
+                
+            }
+            msg += `1 ~ ${n2}번째의 곱 : ${sum}`;
+
+            document.getElementsByTagName('p')[1].innerHTML = msg;
+        }
+        
+        quiz2(n2)
+
+        function quiz3(n){
+            let msg = "";
+            let result = 0;
+
+            // while 문을 사용해서 자릿수를 계산
+            while (n != 0) {
+                result = result * 10 + n % 10;
+                n = parseInt(n / 10);
+            }
+
+            document.getElementsByTagName('p')[2].innerHTML = msg;
+
+        }
+        quiz3(n3);
+
+
+
+    </script>
+
+
+
+</body>
+</html>

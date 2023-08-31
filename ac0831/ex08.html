@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>이벤트 처리</h1>
+    <hr>
+
+    <div></div>
+
+
+    <script>
+        let div = document.getElementsByTagName('div')[0];
+
+        // addEventListener (이벤트, 실행함수)
+        // 이벤트는 on을 붙이면 안된다
+        // 함수는 익명함수를 주로 전달한다
+        div.addEventListener('mouseover',(e) =>{
+            e.target.style.backgroundColor = 'gray';
+        });
+
+        div.addEventListener('mouseout',(e)=>{
+            e.target.style.backgroundColor = 'black';
+
+        })
+
+    </script>
+
+    
+
+
+
+
+    
+</body>
+</html>

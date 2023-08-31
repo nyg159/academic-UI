@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+
+    <style>
+        pre{
+            font-family: consolas;
+            border: 2px solid black;
+            padding: 15px;
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>이벤트 처리</h1>
+    <hr>
+
+    <div>
+        <img src="/ac0831/img/dora.png" title=" 클릭시 상세설명">
+    </div>
+
+    <div>
+        <pre>
+피가 같지 이상 공자는 사막이다.
+이성은 생명을 심장은 인생을 부패뿐이다.
+얼마나 불어 놀이 이것은 이 몸이 위하여서 것이다.
+앞이 싸인 돋고, 같지 무엇을 보배를 창공에 같이, 아름다우냐?
+봄날의 커다란 얼음과 인생을 얼마나 너의 원질이 구하지 피다.
+생명을 되려니와, 청춘 위하여, 것은 풍부하게 밥을 낙원을 뜨거운지라, 철환하였는가?
+수 천하를 황금시대의 가치를 속에서 군영과 것이다. 
+커다란 찾아다녀도,이 그러므로 봄바람을 위하여 말이다.
+가는 풀이 역사를 힘차게 앞이 이것은 봄바람이다.
+        </pre>
+    </div>
+
+    <p><button>접기</button></p>
+
+
+
+    <script>
+        let img = document.getElementsByTagName('img')[0];
+        let pre = document.getElementsByTagName('pre')[0];
+        let button = document.getElementsByTagName('button')[0];
+
+
+        img.onclick = (e) =>{   // 이벤트 객체가 필요 없으면 생략 가능
+            e.target.style.border = `5px solid black`;
+
+            pre.style.display = `block`;
+
+        }
+
+        button.onclick = () =>{
+            pre.style.display = `none`;
+        }
+
+        
+
+        
+
+    </script>
+    
+</body>
+</html>
