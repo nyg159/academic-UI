@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz03</title>
+    <style>
+        #input {
+            display: flex;
+            flex-direction: column;
+        }
+        #input > * {
+            width: 200px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- userpw와 pwcheck가 동일 하다면 다음 input으로 이동 -->
+    <!-- 단, 값이 다르면 pwcheck에 작성된 값은 지우고 -->
+    <!-- 커서는 userpw로 이동 시킨다 -->
+
+    <h1>Quiz03</h1>
+    <hr>
+
+    <h4>input의 값 가져오기 및 검증</h4>
+
+    <div id="input">
+        <input type="text" name="userid" placeholder="아이디" required>
+        <input type="password" name="userpw" placeholder="패스워드" required>
+        <input type="password" name="pwcheck" placeholder="패스워드 확인" required>
+        <input type="email" name="email" placeholder="이메일" required>
+
+
+        <button>가입</button>
+
+        <h4>결과 출력</h4>
+
+        <div id="result"></div>
+
+
+    </div>
+    
+
+    
+    <script>
+        let button = document.getElementsByTagName('button')[0];
+
+        button.onclick = () =>{
+            let input = document.querySelector('#input');
+            let child = input.children;
+
+            let pw = document.getElementsByName('userpw');
+            console.log(pw);
+
+            let pwcheck = document.getElementsByName('pwcheck');
+            console.log(pwcheck);
+
+
+            let msg = "";
+
+
+            if(pw.value != pwcheck.value){
+                alert('비밀번호가 일치하지 않습니다.!!');
+
+                pw.focus();
+
+            }
+            else{
+
+                for(let i = 0; i < child.length - 1; i++){
+                    msg += `<p>${child[i].value}</p>`;
+                }
+
+                document.querySelector('#result').innerHTML = msg;
+
+            }
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>
