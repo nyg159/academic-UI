@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+</head>
+<body>
+    <h1>Quiz01</h1>
+    <hr>
+
+    <input type="number" name="num" placeholder="정수 입력">
+    <button>입력</button>
+
+    <hr>
+
+    <h4>결과 - 1 ~ n 까지의 약수 출력</h4>
+    
+    <p id="result"></p>
+
+    <h4> 결과 : 소수 판별</h4>
+
+    <p id="prime"></p>
+
+
+    <script>
+        let button = document.getElementsByTagName('button')[0];
+        let input = document.getElementsByTagName('input')[0];
+        let p = document.getElementById('result');
+        
+        let result1 = "";
+
+        function num1(n) {
+            let count = 0;
+            let msg = "";
+
+            for (let i = 0; i <= n; i++) {
+                if(n % i == 0){
+                    result1 += i +" ";
+                    count++;
+                    
+                }
+                
+            }
+
+            if(count > 2){
+                    msg = "소수가 아닙니다.";
+                }
+                else{
+                    msg = "소수가 맞습니다.";
+
+                }
+
+            p.innerHTML = `결과 : ${result1}`;
+            document.getElementById('prime').innerHTML = msg;
+        }
+
+
+        button.onclick = (e) =>{
+            num1(input.value);
+            
+        }
+
+    
+        
+
+
+    </script>
+</body>
+</html>

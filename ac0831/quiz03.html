@@ -14,20 +14,25 @@
 
 
     <ul>
-        <li></li>
+        
+    </ul>
+
+    <ul>
+        <li>모닝 (30 km/h)</li>
         <li>10 km/h 가속 (현재 40 km/h)</li>
         <li>20 km/h 감속 (현재 20 km/h)</li>
     </ul>
 
 
-    <script src="/ac0831/js/car.js">
+    <script src="/ac0831/js/car.js"></script>
 
-        let li = document.getElementsByTagName('li');
+    <script>
+        let ul = document.getElementsByTagName('ul')[0];
 
-        let car = new Car('모닝',30);
+        let car = new Car('모닝', 30);
 
-        li[0].innerHTML = `${Car.show()}`;
-
+        ul.innerHTML = 
+            `<li>${car.show()}</li>`;
     </script>
 
     
