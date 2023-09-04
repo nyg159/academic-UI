@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+
+    <style>
+        h4{
+            color: blue;
+        }
+        p{
+            font-family: consolas;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <h1>CSS 조작</h1>
+    <hr>
+
+    <div class="tatget">
+        <h4>Hello World</h4>
+
+        <p>java!!!</p>
+
+        <button>변경</button>
+    </div>
+    
+
+
+    <script>
+        document.querySelector('button').onclick = () => {
+            let target = document.querySelector('.target').children;
+            let css = document.styleSheets[0];
+
+            css.cssRules[0].style.color = 'red';
+            css.cssRules[1].style.fontSize = '200%';
+
+            css.addRule('button', 'border: 5px solid black');
+        }
+    </script>
+    
+</body>
+</html>

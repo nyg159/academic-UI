@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz03</title>
+
+    <style>
+         .container {
+            width: 400px;
+            overflow: hidden;
+        }
+        .silder {
+            display: flex;
+            transition: all 3s;
+        }
+        .silder > img {
+            width: 400px;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>이미지 슬라이드</h1>
+    <hr>
+
+    <div class="container">
+        <div class="silder">
+            <img src="img/first.jpg">
+            <img src="img/second.jpg">
+            <img src="img/third.jpg">
+        </div>
+
+        <ul class="menu">
+            <li><button>이전</button></li>
+            <li><button>다음</button></li>
+        </ul>
+    </div>
+
+
+    <script>
+        let container = document.querySelector('.container').children;
+        let btns = container[1].querySelectorAll("button");
+        let size = 400, count = 0;
+        let end = container[0].children.length - 1;
+
+        btns[0].onclick = () => {
+            if (count > 0) { 
+                count--;
+            }
+            container[0].style.transform = `translate(-${size * count}px)`;
+        }
+        btns[1].onclick = () => {
+            if (count < end) {
+                count++;
+            }
+            container[0].style.transform = `translate(-${size * count}px)`;
+        }
+    </script>
+    
+</body>
+</html>
