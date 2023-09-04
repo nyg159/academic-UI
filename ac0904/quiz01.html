@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+    <style>
+        table{
+            border-collapse:collapse ;
+            background-color: ;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 15px 15px;
+        }
+    </style>
+</head>
+<body>
+    <tbody>
+        <table id="table">
+            <tr>
+                <td></td>
+                <!-- 여기는 x = 0, y = 0 -->
+                <td></td>
+                <!-- x = 1, y=0 -->
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <script>
+
+                let pointX = 0;
+                let pointY = 0;
+
+                var tr = document.querySelectorAll('tr');
+
+                var td = tr[pointY].children;
+
+                td[pointX].style.backgroundColor = 'red';
+
+                
+                console.log(`X = ${pointX}, Y = ${pointY} `);
+
+                document.body.onkeydown = (e) =>{
+
+
+                    tr = document.querySelectorAll('tr');
+
+                    td = tr.children;
+                    
+
+
+                    if(e.key == 'ArrowLeft'){
+                        if(0 <= (pointX - 1) || (pointX - 1) >= (tr[pointY].children.length - 1)){
+                            tr[pointY].children[pointX].style.backgroundColor = 'white';
+
+                        
+                            pointX--;
+                            tr[pointY].children[pointX].style.backgroundColor = 'red';
+
+
+                            console.log(`Y = ${pointY}, X = ${pointX}`);
+                        }
+                        else{
+                            console.log("error");
+                        }
+                        
+
+                    }
+
+                    if(e.key == 'ArrowRight'){
+                        // td[pointX].style.backgroundColor = 'white';
+                        tr[pointY].children[pointX].style.backgroundColor = 'white';
+        
+                        pointX++;
+                        tr[pointY].children[pointX].style.backgroundColor = 'red';
+
+                        console.log(`Y = ${pointY}, X = ${pointX}`);
+
+
+                    }
+
+                    if(e.key == 'ArrowUp'){
+                        tr[pointY].children[pointX].style.backgroundColor = 'white';
+
+                        pointY--;
+                        tr[pointY].children[pointX].style.backgroundColor = 'red';
+
+
+                        console.log(`Y = ${pointY}, X = ${pointX}`);
+
+                    }
+
+                    if(e.key == 'ArrowDown'){
+                        tr[pointY].children[pointX].style.backgroundColor = 'white';
+                        
+                        pointY++;
+                        
+                        tr[pointY].children[pointX].style.backgroundColor = 'red';
+
+                        console.log(`Y = ${pointY}, X = ${pointX}`);
+
+
+                    }
+                }
+
+
+            </script>
+            
+
+        </table>
+    </tbody>
+    
+</body>
+</html>

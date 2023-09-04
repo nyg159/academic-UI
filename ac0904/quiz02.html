@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz02</title>
+</head>
+<body>
+    <h1>목록</h1>
+    <hr>
+
+    <h3>할일 (To Do)</h3>
+
+    <input type="text" name="test" placeholder="할 일 작성">
+    <button id="button">등록</button>
+
+
+    <ul></ul>
+
+
+    <script>
+        let button = document.getElementById('button');
+        let input = document.getElementsByTagName('input')[0];
+        let ul = document.querySelector('ul');
+        
+
+            let run = () =>{
+            let li = document.createElement('li');
+            
+
+            li.innerHTML = `${input.value}`;
+
+            ul.appendChild(li);
+            
+            }
+
+            button.onclick = run;
+
+
+
+            
+
+            
+
+        
+
+    </script>
+
+</body>
+</html>

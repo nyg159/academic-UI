@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+<body>
+    <h1>노드 생성</h1>
+    <hr>
+
+    <div id="a"></div>
+
+    <p></p>
+
+
+
+    <script>
+        let test = document.createElement('div');
+
+        test.innerHTML = 'JS 에서 생성한 노드 입니다.';
+
+        test.setAttribute('id','a')
+        // 속성을 주는 거
+
+        // 위에 처럼 작성하면 실제로
+        // <div id='jsNode'>JS 에서 생성한 노드 입니다.</div>
+        // 로 생성된다.
+        
+        test.style.color = 'red';
+
+        document.body.appendChild(test);
+        // appendChid : ?
+
+
+        // 연습 코드
+
+
+
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>
