@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+<body>
+    <h1>다양한 그래프들</h1>
+    <hr>
+
+    <div style="width: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        
+        let datas = [
+            {x: '서울',   y: '1654321'},
+            {x: '대전',   y: '1424321'},
+            {x: '대구',   y: '1944321'},
+            {x: '부산',   y: '1234321'},
+            {x: '제주도',  y: '1004321'},
+            {x: '광주',   y: '1304500'},
+            {x: '울산',   y: '1456789'},
+            {x: '인천',   y: '1687654'},
+            {x: '경기도',  y: '1834567'},
+            {x: '강원도',  y: '1104321'}
+
+
+        ];
+
+        let datasets = [                        // 실제 데이터 정보들
+            {
+                label: '월별 판매량',            // 데이터 종류
+                data: datas,                    // 데이터 수치
+                
+            },
+        ]
+
+        let options = {                         // 기타 설정 : 종류가 워낙 많아. 공식 사이트를 찾아보는 것을 권장
+            scales: {                           // 축의 구성을 설정
+                x:{
+                    type: 'category',
+                    position: 'bottom',
+                    text: '도시',
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left',
+                    text: '인구수',
+                }
+            }
+        }
+
+        new Chart(ctx, {
+            type: 'scatter',                       // 그래프 종류
+            data: {                             // 그래프에 출력할 정보
+                
+                datasets: datasets,
+            },
+            options: options,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+<body>
+    <h1>다양한 그래프들</h1>
+    <hr>
+
+    <div style="width: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        
+        let datas = [
+            {x: '서울',     y: 654321,      r: 5},
+            {x: '대전',     y: 1424321,     r: 2},
+            {x: '대구',     y: 1944321,     r: 3},
+            {x: '부산',     y: 1234321,     r: 4},
+            {x: '제주도',   y: 1004321,     r: 5},
+            {x: '광주',     y: 1304500,     r: 6},
+            {x: '울산',     y: 1456789,     r: 7},
+            {x: '인천',     y: 1687654,     r: 8},
+            {x: '경기도',   y: 1834567,     r: 9},
+            {x: '강원도',   y: 1104321,     r: 10},
+            {x: '충청남도',  y: '1289000',  r: 2},
+            {x: '충청북도',  y: '1156782',  r: 8},
+            {x: '전라남도',   y: '1378900', r: 9},
+            {x: '전라북도',   y: '1493210', r: 11},
+            {x: '경상남도',   y: '1776543', r: 15}
+
+
+        ];
+
+        let datasets = [                        // 실제 데이터 정보들
+            {
+                label: '인구수',            // 데이터 종류
+                data: datas,                    // 데이터 수치
+                
+            },
+        ]
+
+        let options = {                         // 기타 설정 : 종류가 워낙 많아. 공식 사이트를 찾아보는 것을 권장
+            scales: {                           // 축의 구성을 설정
+                x:{
+                    type: 'category',
+                    position: 'bottom',
+                    title:{
+                        display: true,
+                        text: '도시',
+
+                    }
+                    
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left',
+                    title:{
+                        display: true,
+                        text: '인구수',
+
+                    }
+                    
+                }
+            }
+        }
+
+        new Chart(ctx, {
+            type: 'bubble',                       // 그래프 종류
+            data: {                             // 그래프에 출력할 정보
+                
+                datasets: datasets,
+            },
+            options: options,
+        });
+    </script>
+</body>
+</html>

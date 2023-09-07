@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+</head>
+<body>
+    <h1>다양한 그래프들</h1>
+    <hr>
+
+    <div style="width: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        let lables = ['Java', 'C/C++', 'Python'];
+        let votes = [6, 10, 14];
+
+        let datasets = [                        // 실제 데이터 정보들
+            {
+                label: '월별 판매량',            // 데이터 종류
+                data: votes,                    // 데이터 수치
+                backgroundColor: ['#ff0000','green','yellow']           // 선 색상
+                
+            },
+        ]
+
+        let options = {                         // 기타 설정 : 종류가 워낙 많아. 공식 사이트를 찾아보는 것을 권장
+            scales: {                           // 축의 구성을 설정
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+        new Chart(ctx, {
+            type: 'pie',                       // 그래프 종류
+            data: {                             // 그래프에 출력할 정보
+                labels: lables,                 // x축에 대한 열 정보
+                datasets: datasets,
+            },
+            options: options,
+        });
+    </script>
+</body>
+</html>
