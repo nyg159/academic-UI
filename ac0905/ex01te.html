@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+
+    <style>
+        form > p {
+            display: flex;
+            justify-content: space-between;
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>연습</h1>
+    <hr>
+
+    <ul>
+        <li>사용자에게 이름, 나이를 입력 받을 input을 작성</li>
+        <li>전송 버튼을 누르면 입력 창 아래 결과를 출력</li>
+        <li>작성한 이름과 나이를 출력하고</li>
+        <li>19세 이상이면 성인 아니면 미성년자로 출력</li>
+    </ul>
+    
+
+    <form>
+        <p>
+            <label for="name">이름</label>
+            <input name="name" id="name" type="text">
+        </p>
+        <p>
+            <label for="age">나이</label>
+            <input name="age" id="age" type="number">
+        </p>
+        <button type="button">전송</button>
+    </form>
+
+    <hr>
+
+    <div class="result">
+        <h4>결과</h4>
+        <p></p>
+    </div>
+
+    <script>
+        let btn = document.querySelector('form > button');
+        
+        btn.onclick = () => {
+            let form = document.querySelectorAll('form input');
+            let name = form[0].value;
+            let age = form[1].value;
+
+            let msg = (age >= 19) ? '성인' : '미성년자';
+            msg = `${name}님의 나이는 ${age}세로 ${msg} 입니다`;
+
+            let result = document.querySelector('.result > p');
+            result.innerHTML = msg;
+        }
+    </script>
+
+</body>
+</html>

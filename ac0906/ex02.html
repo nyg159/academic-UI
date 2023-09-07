@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+<body>
+
+
+    <!-- api를 사용하기 위해서는 문서를 잘 확인 하자 -->
+    <!-- then 안에는 json 형식의 파일을 받기 때문에 안에 주석처리를 하면 에러남 -->
+
+    <script>
+        let url = 'https://apis.data.go.kr/1360000/VilageFcstMsgService/getWthrSituation?serviceKey=Ss9Ya4cH0JAl%2FJrZ2edqPhHVt14W005kMBsltQIdPxfsM8fN0FZSrTvo9Ts1BRBy3KBrIOhETck0JG0oks2XRg%3D%3D&pageNo=1&numOfRows=10&dataType=JSON&stnId=108';
+
+       fetch(url, {
+
+           method: 'get'
+       })
+       .then(response => response.json())
+       .then(data => {
+           console.log(data);
+           console.log(data.response.body.items.item[0]);
+
+       })
+       .catch(e => {
+            console.log(e);
+            console.log('에러')
+       })
+
+    </script>
+    
+</body>
+</html>

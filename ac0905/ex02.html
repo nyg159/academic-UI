@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+
+
+    <style>
+        fieldset{
+            border: 2px solid black;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>매뉴 옮기기</h1>
+    <hr>
+
+    <tbody>
+
+        <fieldset id="userInfo">
+            <legend>사용자 정보</legend>
+
+            <p>
+                <input type="text" name="name" placeholder="이름">
+            </p>
+
+            <p>
+                <input type="text" name="phone" placeholder="연락처">
+            </p>
+
+            <p>
+                <input type="text" name="adress" placeholder="주소">
+            </p>
+
+        </fieldset>
+
+        <br><br>
+
+        <fieldset id="orderInfo">
+            <legend>주문 정보</legend>
+            <p>
+                <input type="checkbox" name="check">사용자 정보와 동일
+            </p>
+
+            <p>
+                <input type="text" name="name" placeholder="이름">
+            </p>
+
+            <p>
+                <input type="text" name="phone" placeholder="연락처">
+            </p>
+
+            <p>
+                <input type="text" name="adress" placeholder="주소">
+            </p>
+
+        </fieldset>
+    </tbody>
+
+
+
+    <script>
+        let userfied = document.querySelectorAll('#userInfo > p');
+        let orderfied = document.querySelectorAll('#orderInfo > p');
+        let checkbox = orderfied[0].children.check;
+
+        checkbox.onclick = () => {
+            
+            if(checkbox.checked){
+                orderfied[1].children.name.value = userfied[0].children.name.value;
+                orderfied[2].children.phone.value = userfied[1].children.phone.value;
+                orderfied[3].children.adress.value = userfied[2].children.adress.value;
+            }
+            else{
+                orderfied[1].children.name.value = '';
+                orderfied[2].children.phone.value = '';
+                orderfied[3].children.adress.value = '';
+            }
+
+        }
+        
+    </script>
+    
+</body>
+</html>

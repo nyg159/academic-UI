@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz1.html</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <hr>
+
+    <ol>
+        <li>팝업 창을 하나 띄운다 (popup/test2.html)</li>
+        <li>팝업 창에서 이름 나이를 입력 받는다</li>
+        <li>전송 버튼을 누르면 팝업창에 입력한 데이터를 부모로 보낸 후 닫는다</li>
+        <li>부모에서 입력 받은 결과를 출력. 단, 성인/미성년자를 구별해서 출력</li>
+    </ol>
+    
+    <h4>결과</h4>
+    
+    <ul></ul>
+
+    <button class="popup">입력</button>
+
+    <script>
+        let popup = document.querySelector('.popup');
+
+        popup.onclick = () => {
+            let newWin = open('popup/test2.html', '_blank', 
+                            'top=500, left=4000, width=500, height=600');
+        };
+
+        function getPopup(data) {
+            let ul = document.querySelector('ul');
+            
+            let msg = '';
+            msg += `<li>이름 : ${data.name }</li>`;
+            msg += `<li>나이 : ${data.age }</li>`;
+            msg += `<li>성인 : ${data.adult }</li>`;
+
+            ul.innerHTML = msg;
+        }
+    </script>
+
+</body>
+</html>

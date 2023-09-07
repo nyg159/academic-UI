@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <h1>REST API Server</h1>
+    <hr>
+
+    <h4>서버는 test의 Django project 를 사용한다.</h4>
+
+    <hr>
+
+    <table>
+        <tr>
+            
+        </tr>
+
+    </table>
+
+    <br>
+
+    <button>입력</button>
+    <button>삭제</button>
+    <button>수정</button>
+
+
+    <script>
+        let url = 'http://localhost:8000/';
+
+        fetch(url, {method : 'get'})
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data);
+
+            let table = document.querySelector('table');
+
+            let button = document.querySelector('button');
+
+
+            for(let i = 0; i < data.length; i++){
+                let msg = '';
+                msg += `<td>${data[i].id}</td>`;
+                msg += `<td>${data[i].userid}</td>`;
+                msg += `<td>${data[i].userpw}</td>`;
+                msg += `<td>${data[i].nick}</td>`;
+                msg += `<td>${data[i].email}</td>`;
+                msg += `<td>${data[i].jdate}</td>`;
+
+
+                table.innerHTML += msg;
+
+            }
+            button[0].click = () =>{
+                
+            }
+            
+
+
+
+
+        })
+
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
