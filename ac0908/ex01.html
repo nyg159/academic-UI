@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+<body>
+    <h1>다양한 그래프들</h1>
+    <hr>
+
+    <div style="width: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        let lables = ['근력', '지력', '체력', '지구력','민첩성'];
+        let a = [10,7,15,16,20];
+        
+        
+
+        let datasets = [                        // 실제 데이터 정보들
+            {
+                label: '스텟 창',            // 데이터 종류
+                data: a,                    // 데이터 수치
+                // 색상은 안넣어도 자동으로 넣어 준다.
+
+                
+                // angle: 30,              // 30도 로 나온다
+
+                
+                
+                
+            },
+            
+        ]
+
+        let options = {                         // 기타 설정 : 종류가 워낙 많아. 공식 사이트를 찾아보는 것을 권장
+            scales: {                           // 축의 구성을 설정
+                r: {
+                    min : 0,
+                    max: 20,
+                    
+
+                    ticks:{
+                    beginAtZero: true,
+                    display: true,
+                    stepSize: 1,
+                    
+                    }
+                },
+                
+                
+
+            }
+        }
+
+        new Chart(ctx, {
+            type: 'polarArea',                       // 그래프 종류
+            data: {                             // 그래프에 출력할 정보
+                labels: lables,                 // x축에 대한 열 정보
+                datasets: datasets,
+            },
+            options: options,
+        });
+    </script>
+</body>
+</html>

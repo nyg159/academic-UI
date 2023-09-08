@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>휴개소 별 날씨 데이터 그래프</h1>
+    <hr>
+
+
+    <div style="width: 500px">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        let url = 'http://data.ex.co.kr/openapi/restinfo/restWeatherList?key=test&type=json&sdate=20230301&stdHour=10';
+
+        
+
+
+
+        fetch(url,{method: 'get'})
+        .then(response => response.json())
+        .then(data =>{
+            var data0 = data.list[0];
+            let data1 = data.list[8];
+            let data2 = data.list[15];
+            let data3 = data.list[99];
+            let data4 = data.list[60];
+
+
+            console.log(data0.unitName);
+
+            const ctx = document.getElementById('myChart');
+
+            let lables =[`${data0.unitName}`, `${data1.unitName}`, `${data2.unitName}`,`${data3.unitName}`,`${data4.unitName}`];
+
+            let votes = [`${data0.tempValue}`,`${data1.tempValue}`,`${data2.tempValue}`,`${data3.tempValue}`,`${data4.tempValue}`];
+
+            let options = {                        // 기타 설정 : 종류가 워낙 많아, 공식 사이트를 찾아보는 것을 권장
+                    scales: {                       // 축의 구성을 설정
+                        y: {
+                            beginAtZero: true    // 맨 밑을 0으로 설정
+                        }
+                    }
+                };
+
+            
+            let datasets = [{                    // 실제 데이터 정보들
+                label: '# of Votes',          // 데이터 종류
+                data: votes,   // 데이터 수치
+                borderWidth: 3,                // 테두리 크기
+                backgroundColor: 'rgba(255,0,0,0.3)',       // 막대(점) 색상
+                borderColor: 'blue'           // 테두리 색상
+                    },
+                    
+                ]
+
+
+        
+            new Chart(ctx, {
+            type: 'bar',                      // 그래프 종류
+            data: {                           // 그래프에 출력할 정보
+                labels: lables,                 // x 축에 대한 열 정보
+                datasets: datasets,   
+            },
+                options: options,
+            });
+            
+        })
+
+
+
+
+        // const ctx = document.getElementById('myChart');
+
+        // let lables =['', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+
+        // let votes = [12, 19, 3, 5, 2, 3];
+
+        // let options = {                        // 기타 설정 : 종류가 워낙 많아, 공식 사이트를 찾아보는 것을 권장
+        //         scales: {                       // 축의 구성을 설정
+        //             y: {
+        //                  beginAtZero: true    // 맨 밑을 0으로 설정
+        //             }
+        //         }
+        //     };
+
+        
+        // let datasets = [{                    // 실제 데이터 정보들
+        //       label: '# of Votes',          // 데이터 종류
+        //       data: votes,   // 데이터 수치
+        //       borderWidth: 3,                // 테두리 크기
+        //       backgroundColor: 'red',       // 막대(점) 색상
+        //       borderColor: 'blue'           // 테두리 색상
+        //         },
+                
+        //     ]
+
+
+      
+        // new Chart(ctx, {
+        //   type: 'bar',                      // 그래프 종류
+        //   data: {                           // 그래프에 출력할 정보
+        //     labels: lables,                 // x 축에 대한 열 정보
+        //     datasets: datasets,   
+        //   },
+        //     options: options,
+        // });
+      </script>
+      
+
+
+
+
+
+</body>
+</html>

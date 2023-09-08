@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz01</title>
+</head>
+<body>
+    <h1>Quiz01</h1>
+    <hr>
+
+    <ol>
+        <li>어제 ex04.html의 itbank 정보만 radar로 출력</li>
+        <li>그래프 아래 '레이더', '파이', '도넛', '폴라' 버튼을 생성</li>
+        <li>해당 버튼을 누르면 해당 그래프로 변경하여 화면에 다시 출력</li>
+    </ol>
+            
+    <div style="width: 450px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <button>레이더</button>
+    <button>파이</button>
+    <button>도넛</button>
+    <button>폴라</button>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        let button = document.querySelectorAll('button');
+
+        const ctx = document.getElementById('myChart');
+
+        let lables = ['근력', '지력', '체력', '지구력','민첩성'];
+        let a = [10,21,13,15,17];
+        let b = [20,10,11,12,13];
+        
+
+        let datasets = [                        // 실제 데이터 정보들
+            {
+                label: '스텟 창',            // 데이터 종류
+                data: a,                    // 데이터 수치
+                backgroundColor: ['rgba(255, 0, 61, 0.3)'],
+                borderColor: ['black']
+                          // 선 색상
+                
+            },
+            {
+                label: '스텟 창',            // 데이터 종류
+                data: b,                    // 데이터 수치
+                backgroundColor: ['rgba(100, 250, 61, 0.3)'],
+                borderColor: ['black']
+            }
+        ]
+
+        let options = {                         // 기타 설정 : 종류가 워낙 많아. 공식 사이트를 찾아보는 것을 권장
+            scales: {                           // 축의 구성을 설정
+                r: {
+                    min : 0,
+                    max: 20,
+
+                    ticks:{
+                    beginAtZero: true,
+                    display: true
+                    
+                    }
+                },
+                
+                
+
+            }
+        }
+
+        let chart = new Chart(ctx, {
+            type: 'radar',                       // 그래프 종류
+            data: {                             // 그래프에 출력할 정보
+                labels: lables,                 // x축에 대한 열 정보
+                datasets: datasets,
+            },
+            options: options,
+        });
+
+        // 레이더 변경 버튼
+        button[0].onclick = () =>{
+            chart.config._config.type = 'radar';
+            chart.update();
+        };
+
+        // 파이 변경 버튼
+        button[1].onclick = () =>{
+            chart.config._config.type = 'pie';
+            chart.update();
+        };
+        // 도넛 변경 버튼
+        button[2].onclick = () =>{
+            chart.config._config.type = 'doughnut';
+            chart.update();
+        };
+        
+        // 폴라 변경 버튼
+        button[3].onclick = () =>{
+            chart.config._config.type = 'polarArea';
+            chart.update();
+        };
+
+
+    </script>
+    
+
+</body>
+</html>
